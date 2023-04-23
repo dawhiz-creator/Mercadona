@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row">
+    <div class="col-4">
+        <h4>Filtrer par catégorie</h4>
+        <ul class="list-group">
+            {% for categorie in categories %}
+            <a href="{% url 'catalogue' %}?categorie={{ categorie.libelle }}" class="list-group-item">{{
+                categorie.libelle }}</a>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="col-8">
+        <h2>Catalogue</h2>
+        {% if produits %}
+        {% for produit in produits %}
+        <div class="card mb-3">
+            <div class="row no-gutters">
+                <div class="col-md-4">
+                    <img src="{{ produit.image.url }}" class="card-img" alt="{{ produit.libelle }}">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ produit.libelle }}</h5>
+                        <p class="card-text">{{ produit.description }}</p>
+                        <p class="card-text"><strong>Prix : </strong>{% if produit.en_promotion %}<span
+                                class="text-danger font-weight-bold">{{ produit.prix_promotion }} €</span> <span
+                                class="text-muted"><del>{{ produit.prix }} €</del></span>{% else %}{{ produit.prix }}
+                            €{% endif %}</p>
+                        {% if produit.en_promotion %}
+                        <p class="card-text"><strong>En promotion : </strong>{{ produit.pourcentage_promotion }}% de
+                            remise du {{ produit.date_debut_promotion }} au {{ produit.date_fin_promotion }}</p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        {% else %}
+        <p>Aucun produit pour cette catégorie.</p>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
