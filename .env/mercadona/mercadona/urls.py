@@ -20,5 +20,5 @@ from django.urls import path
 
 urlpatterns = [
     path('', include('mercadona_promos.urls')),
-    path('admin/', admin.site.urls),
+    # path('admin/', admin.site.urls),
 ]
