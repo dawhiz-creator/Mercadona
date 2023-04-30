@@ -1,0 +1,8 @@
+.env/mercadona/images*
+.env/Sources*
+.env/django_env/
+Dockerfile
+fly.toml
+.dockerignore
+mercadona/.env
+.env/mercadona/mercadona/.env
