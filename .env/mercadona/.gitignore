@@ -1,0 +1,6 @@
+mercadona/.env
+requirements.txt
+../Sources/
+../../Dockerfile
+../../.dockerignore
+../django_env/
