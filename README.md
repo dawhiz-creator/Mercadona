@@ -60,3 +60,8 @@ Cette application est distribuée sous la licence MIT.
 ## Contact
 
 Pour toute question ou assistance, veuillez envoyer un e-mail à [support@mercadona-promotions.com](mailto:support@mercadona-promotions.com).
+
+
+## Liens utiles
+
+* [Site internet de Mercadona](https://mercadona-promos.fly.dev) : Site officiel de Mercadona.
