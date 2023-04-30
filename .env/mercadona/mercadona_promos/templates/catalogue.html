@@ -11,6 +11,7 @@
             {% endfor %}
         </ul>
     </div>
+<<<<<<< HEAD
     <div class="col-8">
         <h2>Catalogue</h2>
         {% if produits %}
@@ -21,6 +22,23 @@
                     <img src="{{ produit.image.url }}" class="card-img" alt="{{ produit.libelle }}">
                 </div>
                 <div class="col-md-8">
+=======
+
+
+    <!-- cards promos added to carrousel -->
+
+    <div class="col-md-12 justify-content-center">
+        <div class=" text-center alert alert-danger">
+            <h2>Les Bons Plans</h2>
+        <!-- </div> -->
+        {% if promotions %}
+        <div class="row">
+            {% for promotion in promotions %}
+            <div class="col-md-3 mb-3">
+                <div class="card h-100">
+                    <img src="{{ promotion.produit.image.url }}" class="card-img-top"
+                        alt="{{ promotion.produit.libelle }}">
+>>>>>>> e3da257 (Init Mercadona promo app)
                     <div class="card-body">
                         <h5 class="card-title">{{ produit.libelle }}</h5>
                         <p class="card-text">{{ produit.description }}</p>

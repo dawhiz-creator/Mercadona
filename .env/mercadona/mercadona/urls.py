@@ -16,7 +16,10 @@ Including another URLconf
 """
 from django.urls import include, path
 from django.contrib import admin
+<<<<<<< HEAD
 from django.urls import path
+=======
+>>>>>>> e3da257 (Init Mercadona promo app)
 
 urlpatterns = [
     path('', include('mercadona_promos.urls')),
