@@ -33,13 +33,15 @@
                 <div class="col-md-8">
 =======
 
+<<<<<<< HEAD
 
     <!-- cards promos added to carrousel -->
+=======
+>>>>>>> 9e5c02d (FIX styles)
 
     <div class="col-md-12 justify-content-center">
         <div class=" text-center alert alert-danger">
             <h2>Les Bons Plans</h2>
-        <!-- </div> -->
         {% if promotions %}
         <div class="row">
             {% for promotion in promotions %}
@@ -133,6 +135,7 @@
 <<<<<<< HEAD
 =======
 </div>
+<<<<<<< HEAD
 <!-- <div class="col-md-12 justify-content-center">
         <div class=" text-center alert alert-danger">
             <h2>Les Bons Plans</h2>
@@ -204,6 +207,8 @@
     </div>
     {% endif %}
 </div> -->
+=======
+>>>>>>> 9e5c02d (FIX styles)
 
 
 <div class="container my-5">
@@ -233,13 +238,14 @@
                 </a>
                 {% endfor %}
             </div>
-            {% if promotions %}
-            <div class="row mt-4 alert alert-warning">
-                <div class="col-md-12 text-center">
-                    <h2>Promotions en cours</h2>
-                </div>
-            </div>
 
+        {% if promotions %}
+           
+            <div class="row mt-4 alert alert-warning animated-bg">
+                <div class="col-md-12 text-center">
+                  <h2>Promotions en cours</h2>
+                </div>
+              </div>
             <div class="row mt-4">
                 <div class="col-md-12">
                     <div id="promotions-carousel" class="carousel slide" data-ride="carousel">
@@ -261,16 +267,6 @@
                             {% endfor %}
                         </div>
 
-                        <!-- TEsts options accès promo redirect -->
-                        <!-- <div class="carousel-inner">
-                            {% for promotion in promotions %}
-                            <div class="carousel-item {% if forloop.first %}active{% endif %}">
-                                <img src="{{ promotion.produit.image.url }}" alt="{{ promotion.produit.libelle }}"
-                                    class="d-block img-fluid carousel-image">
-                            </div>
-
-                            {% endfor %}
-                        </div> -->
                         <a class="carousel-control-prev" href="#promotions-carousel" role="button" data-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="sr-only">Previous</span>
@@ -282,11 +278,14 @@
                     </div>
                 </div>
             </div>
-            {% endif %}
-        </div>
+        {% endif %}
+    </div>
 
+<<<<<<< HEAD
 
         <!-- Voici le code complet à partir de cet endroit : -->
+=======
+>>>>>>> 9e5c02d (FIX styles)
 
         <div class="col-md-8 text-center ">
             <h2 class="text-muted">Catalogue</h2>
@@ -314,13 +313,6 @@
                                 {{produit.promotion.date_debut_promo }} au {{ produit.promotion.date_fin_promo }}
                             </p>
                             {% endif %}
-                            <!-- <h2>{{ produit.libelle }}</h2>
-                                            <p>{{ produit.description }}</p>
-                                            <p>Prix: {{ produit.prix }} €</p>
-                                            {% if produit.promotion %}
-                                                <p>Prix avec promotion: {{ produit.prix_apres_promo }} €</p>
-                                                <p>Pourcentage de réduction: {{ produit.promotion.pourcentage }} %</p>
-                                            {% endif %} -->
 
                         </div>
                     </div>

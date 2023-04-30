@@ -24,3 +24,33 @@ footer {
 .text-center.p-1 {
     height: 10px;
 }
+
+
+/* color anime */
+
+  .animated-bg {
+    background-image: linear-gradient(to right, #FDEDEC, #F9EBEA, #F5EEF8, #EAF2F8, #E8F8F5, #F2F5EA, #FDFEFE);
+    background-size: 200% auto;
+    animation: animate-bg 10s linear infinite, pulse 1s ease-in-out infinite;
+  }
+  
+  @keyframes animate-bg {
+    0% {
+      background-position: 0% 0%;
+    }
+    100% {
+      background-position: 100% 0%;
+    }
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1); /* Taille normale */
+    }
+    50% {
+      transform: scale(1.05); /* Taille 20% plus grande */
+    }
+    100% {
+      transform: scale(1); /* Taille normale */
+    }
+  }
