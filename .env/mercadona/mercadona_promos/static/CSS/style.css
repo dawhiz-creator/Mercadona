@@ -1,5 +1,5 @@
 body {
-    background-color: lightgray;
+    background-color: white;
     display: flex;
     overflow-y: hidden;
     overflow-x: hidden;
@@ -7,23 +7,24 @@ body {
     min-height: 100vh;
 }
 
+html {
+    overflow-x: hidden;
+}
 
-footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
+footer, header {
     background-color: rgba(0, 0, 0, 0.2);
     text-align: center;
     margin-top: auto;
 }
 
 .container-fluid {
-    margin-top: 45px;
+    margin-top: auto;
 }
 
 .text-center.p-1 {
     height: 10px;
 }
+
 
 
 /* color anime */

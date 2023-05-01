@@ -42,7 +42,6 @@ import environ
 from django.core.management.utils import get_random_secret_key
 import os
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
@@ -52,7 +51,6 @@ import os
 # SECURITY WARNING: don't run with debug turned on in production!
 
 # ---------------------------------------#
-
 
 # Take environment variables from .env file
 
@@ -156,7 +154,6 @@ DATABASES = {
     }
 }
 
-
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 
@@ -195,7 +192,12 @@ STATIC_URL = 'static/'
 #     os.path.join(BASE_DIR, 'mercadona_promos/static'),
 # ]
 
+# images
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'images/')
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
