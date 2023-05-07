@@ -10,11 +10,11 @@ Chaque produit est affiché avec son libellé, sa description, son prix et une i
 
 ### Ajouter une promotion
 
-Seuls les administrateurs peuvent ajouter des promotions. Pour vous connecter, cliquez sur "Connexion" en haut à droite de la page, et saisissez votre nom d'utilisateur et votre mot de passe.
+Seuls les administrateurs peuvent ajouter des promotions. Pour vous connecter, cliquez sur "Espace Admin" en haut à droite de la page, et saisissez votre nom d'utilisateur et votre mot de passe.
 
 Une fois connecté, accédez à l'espace admin en cliquant sur le lien en haut à droite de la page. Vous pouvez y créer de nouveaux produits en cliquant sur "Ajouter un produit". Pour cela, saisissez le libellé, la description, le prix, l'image et la catégorie du produit.
 
-Pour ajouter une promotion à un produit, accédez à la liste des produits depuis l'espace admin, en cliquant sur "Catalogue". Cliquez sur le bouton "Promotion" à côté du produit que vous souhaitez mettre en promotion. Saisissez le pourcentage de remise que vous souhaitez appliquer, ainsi que la date de début et la date de fin de la promotion. Le nouveau prix est calculé automatiquement.
+Pour ajouter une promotion à un produit, accédez à la liste des produits depuis l'espace admin, en cliquant sur "Catalogue". Cliquez sur le bouton "Promotion" à côté du produit que vous souhaitez mettre en promotion. Saisissez la promotion que vous souhaitez appliquer (elle s'appliquera telle qu'elle a été créée: date début, date fin, pourcentage, produit concerné). Le nouveau prix est calculé automatiquement.
 
 ### Déconnexion
 

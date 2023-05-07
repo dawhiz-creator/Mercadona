@@ -10,19 +10,6 @@
 # https://docs.djangoproject.com/en/4.2/ref/settings/
 # """
 
-# from pathlib import Path
-# import os
-# from dotenv import load_dotenv
-# import dj_database_url
-
-# # SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = os.getenv('SECRET_KEY')
-
-# # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = os.getenv('DEBUG', '0').lower() in ['true', 't', '1']
-
-# ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS').split(' ')
-# CSRF_TRUSTED_ORIGINS = os.getenv('CSRF_TRUSTED_ORIGINS').split(' ')
 #------------------------------ CONF--------------------#
 
 """
@@ -45,47 +32,50 @@ import os
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = env('PROD_KEY')#'django-insecure--2d(pr8v0fxm)uk2v)*&jt8mw08b0-7yo-u1sqfo(rs2t#_^ek'
-
-# SECURITY WARNING: don't run with debug turned on in production!
-
 # ---------------------------------------#
 
 # Take environment variables from .env file
 
-env = environ.Env(  
+env = environ.Env(
     # set casting, default value
     DEBUG=(bool, False),
 )
 
-ALLOWED_HOSTS = ['*']
+# ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'mercadona-retail.fly.dev','mercadona-promos.fly.dev']
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Take environment variables from .env file
-environ.Env.read_env(BASE_DIR / 'mercadona/.env')  
+environ.Env.read_env(BASE_DIR / 'mercadona/.env')
 
-# SECRET_KEY = os.environ.get('PROD_KEY', None)
-# if SECRET_KEY is None:
-#     raise ValueError('PROD_KEY not found in environment variables')
-
-# # SECURITY WARNING: keep the secret key used in production secret!
+# SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = env.str('SECRET_KEY', default=get_random_secret_key())
-DEBUG= env('DEBUG')
+if SECRET_KEY is None:
+    raise ValueError('PROD_KEY not found in environment variables')
+DEBUG= env.bool('DEBUG', default=False)
 
-# DATABASES = {
-#     # read os.environ['DATABASE_URL']
-#     'default': env.db() 
-# }
+DATABASES = {
+    # read os.environ['DATABASE_URL']
+    'default': env.db()
+}
 
-STATIC_ROOT = BASE_DIR / 'mercadona_promos/static'  # 'staticfiles'  
-# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'  
-# ALLOWED_HOSTS = ['localhost', '127.0.0.1',
-#                  'mercadona-promos.fly.dev']  
+STATIC_ROOT = BASE_DIR / 'mercadona_promos/static'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-CSRF_TRUSTED_ORIGINS = ['https://mercadona-promos.fly.dev']  
+CSRF_TRUSTED_ORIGINS = ['https://mercadona-retail.fly.dev']
+CSRF_COOKIE_SECURE = True
+CSRF_COOKIE_HTTPONLY = True
+
+SECURE_HSTS_SECONDS = 60 * 60 * 24 * 7 * 52  # one year
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+SECURE_SSL_REDIRECT = True
+SECURE_BROWSER_XSS_FILTER = True
+SECURE_CONTENT_TYPE_NOSNIFF = True
+SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
+SECURE_HSTS_PRELOAD= True
+SESSION_COOKIE_SECURE = True
 # ---------------------------------------#
 
 # Application definition
@@ -96,7 +86,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'whitenoise.runserver_nostatic',  
+    'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
     'mercadona_promos',
 ]
@@ -109,7 +99,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',  
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'mercadona.urls'
@@ -135,24 +125,17 @@ WSGI_APPLICATION = 'mercadona.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-# # # DATABASES = {
-# # #     'default': {
-# # #         'ENGINE': 'django.db.backends.sqlite3',
-# # #         'NAME': BASE_DIR / 'db.sqlite3',
-# # #     }
-# # # }
-
-# ---- Setted in .env
-DATABASES = {
-    'default': {
-        'ENGINE': env('ENGINE'),
-        'NAME': env('DB_NAME'),
-        'USER': env('DB_USER'),
-        'PASSWORD': env('DB_KEY'),
-        'HOST': env('DB_HOST'),
-        'PORT': env('DB_PORT'),
-    }
-}
+# ---- Setted in .env for localhost
+# DATABASES = {
+#     'default': {
+#         'ENGINE': env('ENGINE'),
+#         'NAME': env('DB_NAME'),
+#         'USER': env('DB_USER'),
+#         'PASSWORD': env('DB_KEY'),
+#         'HOST': env('DB_HOST'),
+#         'PORT': env('DB_PORT'),
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -186,15 +169,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
+# fichier CSS/images/JS
 STATIC_URL = 'static/'
-# fichier CSS
-# STATICFILES_DIRS = [
-#     os.path.join(BASE_DIR, 'mercadona_promos/static'),
-# ]
 
 # images
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'images/')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'mercadona_promos/static/images/')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field

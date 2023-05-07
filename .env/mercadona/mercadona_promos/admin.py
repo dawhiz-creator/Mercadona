@@ -12,8 +12,8 @@ class CategorieAdmin(admin.ModelAdmin):
     ordering = ('libelle',)  # ordre de tri par défaut
 
 class ProduitAdmin(admin.ModelAdmin):
-    list_display = ('libelle', 'prix', 'categorie',
-                    'description', 'image', 'promotion')
+    list_display = ('libelle', 'description', 'prix', 
+                    'image_url', 'categorie', 'promotion')
     search_fields = ('libelle', 'categorie__libelle',)
     list_filter = ('categorie',)
     ordering = ('libelle',)
@@ -33,3 +33,7 @@ admin.site.register(Categorie, CategorieAdmin)
 admin.site.register(Produit, ProduitAdmin)
 admin.site.register(Admin, AdminAdmin)
 admin.site.register(Promotion, PromotionAdmin)
+
+
+
+

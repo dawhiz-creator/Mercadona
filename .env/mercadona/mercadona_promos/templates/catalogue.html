@@ -4,8 +4,8 @@
 
 <div class="container">
     <div class="jumbotron text-center">
-        <h1 class="display-4">Bienvenue sur notre site de promotions</h1>
-        <p class="lead">Découvrez nos offres spéciales pour économiser de l'argent sur vos achats.</p>
+        <h1 class="display-4">Bienvenue sur votre site préféré de promotions</h1>
+        <p class="lead">Découvrez les offres spéciales pour économiser de l'argent sur vos achats.</p>
     </div>
 
 
@@ -17,34 +17,56 @@
             {% for promotion in promotions %}
             <div class="col-md-3 mb-3">
                 <div class="card h-100">
-                    <img src="{{ promotion.produit.image.url }}" class="card-img-top"
+                    <img src="{{ promotion.produit.image_url }}" class="card-img-top"
                         alt="{{ promotion.produit.libelle }}">
                     <div class="card-body">
-                        <h5 class="card-title">{{ promotion.produit.libelle }}</h5>
-                        <p class="card-text">{{ promotion.produit.categorie.libelle }}</p>
-                        {% if promotion.produit.promotion %}
-                        <p class="card-text">
-                            <strong>Prix avant promotion: </strong>{{ promotion.produit.prix_avant_promo }} €
-                        </p>
-                        <p class="card-text">
-                            <strong>Prix après promotion: </strong>{{ promotion.produit.prix_apres_promo }} €
-                        </p>
-                        {% else %}
-                        <p class="card-text">
-                            <strong>Prix: </strong>{{ promotion.produit.prix }} €
-                        </p>
-                        {% endif %}
+                        <h5 class="card-title">{{ promotion.produit.libelle }}</h5>                         
+                            <p class="card-text">
+                                {% if promotion.produit.categorie.libelle == 'Vetements' %}
+                                    <i class="fas fa-tshirt"></i>
+                                {% elif promotion.produit.categorie.libelle == 'Electronique' %}
+                                    <i class="fas fa-laptop"></i>
+                                {% elif promotion.produit.categorie.libelle == 'Alimentation' %}
+                                    <i class="fas fa-utensils"></i>
+                                {% elif promotion.produit.categorie.libelle == 'Boissons' %}
+                                    <i class="fas fa-coffee"></i>
+                                {% elif promotion.produit.categorie.libelle == 'Entretien' %}
+                                    <i class="fas fa-broom"></i>
+                                {% elif promotion.produit.categorie.libelle == 'Hygiene' %}
+                                    <i class="fas fa-hand-sparkles"></i>
+                                {% elif promotion.produit.categorie.libelle == 'Divers' %}
+                                    <i class="fas fa-puzzle-piece"></i>
+                                {% else %}
+                                    {{ promotion.produit.categorie.libelle }}
+                                {% endif %}
+                            </p>
+            
+                            <p class="card-text">{{ promotion.produit.description }}</p>
+                            {% if promotion.produit.promotion %}
+                            <p class="card-text">
+                                <strong>Prix avant promotion: </strong>{{ promotion.produit.prix_avant_promo }} €
+                            </p>
+                            <p class="card-text">
+                                <strong>Prix après promotion: </strong>{{ promotion.produit.prix_apres_promo }} €
+                            </p>
+                            {% else %}
+                            <p class="card-text">
+                                <strong>Prix: </strong>{{ promotion.produit.prix }} €
+                            </p>
+                            {% endif %}
                     </div>
                 </div>
             </div>
             {% endfor %}
+            
+
         </div>
         {% else %}
         <p>Aucun produit en promotion pour le moment.</p>
         {% endif %}
     </div>
 </div>
-</div>
+<!-- </div> -->
 
 <div class="container my-5">
     <div class="row">
@@ -54,24 +76,27 @@
                 {% for categorie in categories %}
                 <a href="{% url 'catalogue' %}?categorie={{ categorie.libelle }}" class="list-group-item">
                     {% if categorie.libelle == 'Vetements' %}
-                    Vêtements
+                        <i class="fas fa-tshirt"></i> Vêtements
                     {% elif categorie.libelle == 'Electronique' %}
-                    Electronique
+                        <i class="fas fa-laptop"></i> Electronique
                     {% elif categorie.libelle == 'Alimentation' %}
-                    Alimentation
+                        <i class="fas fa-utensils"></i> Alimentation
                     {% elif categorie.libelle == 'Boissons' %}
-                    Boissons
+                        <i class="fas fa-coffee"></i> Boissons
                     {% elif categorie.libelle == 'Entretien' %}
-                    Entretien
+                        <i class="fas fa-broom"></i> Entretien
                     {% elif categorie.libelle == 'Hygiene' %}
-                    Hygiène
+                        <i class="fas fa-shower"></i> Hygiène
                     {% elif categorie.libelle == 'Divers' %}
-                    Divers
+                        <i class="fas fa-puzzle-piece"></i> Divers
                     {% else %}
-                    {{ categorie.libelle }}
+                        {{ categorie.libelle }}
                     {% endif %}
                 </a>
-                {% endfor %}
+            {% endfor %}
+            
+
+
             </div>
             {% if promotions %}
             <div class="row mt-4 alert alert-warning animated-bg">
@@ -90,7 +115,7 @@
                         <div class="carousel-inner">
                             {% for promotion in promotions %}
                                 <div class="carousel-item {% if forloop.first %}active{% endif %}">
-                                    <img src="{{ promotion.produit.image.url }}" class="d-block w-100" alt="{{ promotion.libelle }}">
+                                    <img src="{{ promotion.produit.image_url }}" class="d-block w-100" alt="{{ promotion.libelle }}">
                                     <div class="carousel-caption d-none d-md-block">
                                         <h5>{{ promotion.libelle }}</h5>
                                         <p>{{ promotion.description }}</p>
@@ -119,9 +144,31 @@
                 {% for produit in produits %}
                 <div class="col-md-4 mb-4">
                     <div class="card h-100">
-                        <img src="{{ produit.image.url }}" class="card-img-top" alt="{{ produit.libelle }}">
+                        <img src="{{ produit.image_url }}" class="card-img-top" alt="{{ produit.libelle }}">
+                        
                         <div class="card-body">
                             <h5 class="card-title">{{ produit.libelle }}</h5>
+
+                            <p class="card-text">
+                                {% if produit.categorie.libelle == 'Vetements' %}
+                                    <i class="fas fa-tshirt"></i>
+                                {% elif produit.categorie.libelle == 'Electronique' %}
+                                    <i class="fas fa-laptop"></i>
+                                {% elif produit.categorie.libelle == 'Alimentation' %}
+                                    <i class="fas fa-utensils"></i>
+                                {% elif produit.categorie.libelle == 'Boissons' %}
+                                    <i class="fas fa-coffee"></i>
+                                {% elif produit.categorie.libelle == 'Entretien' %}
+                                    <i class="fas fa-broom"></i>
+                                {% elif produit.categorie.libelle == 'Hygiene' %}
+                                    <i class="fas fa-hand-sparkles"></i>
+                                {% elif produit.categorie.libelle == 'Divers' %}
+                                    <i class="fas fa-puzzle-piece"></i>
+                                {% else %}
+                                    {{ promotion.produit.categorie.libelle }}
+                                {% endif %}
+                            </p>
+                            
                             <p class="card-text">{{ produit.description }}</p>
                             <p class="card-text">
                                 <strong>Prix : </strong>

@@ -5,15 +5,21 @@
     <meta charset="UTF-8">
     <title>{% block title %}Mercadona{% endblock %}</title>
     {% block stylesheets %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     {% endblock %}
     {% load static %}
     <link rel="stylesheet" href="{% static 'CSS/style.css' %}">
+    <meta name="description" content="Bienvenue sur votre site préféré de promotions">
 </head>
 
+
+
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light ">
-        <a class="navbar-brand text-primary font-weight-bold" href="#" style="width: 100px;">MERCADONA</a>
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <a class="navbar-brand text-primary font-weight-bold" href="#" style="width: 100px; background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsuf6KmzVfvh68WoIcz6b11drArh1zFha6Cg&usqp=CAU'); background-size: contain; background-repeat: no-repeat; display: inline-block; padding-left: 50px;">MERCADONA</a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -32,7 +38,7 @@
                       </svg>
                       Mon panier
                     </a>
-                </li>                  
+                  </li>                  
             </ul>
             <button class="btn btn-outline-primary  text-md-right mt-3 mt-md-0 mx-auto btn-sm">
                 <a href="{% url 'admin:index' %}">
@@ -47,10 +53,13 @@
             </button>
         </div>
     </nav>
+    </header>
 
-    <div class="container my-4">
-        {% block content %}{% endblock %}
-    </div>
+    <main>
+        <div class="container my-4">
+            {% block content %}{% endblock %}
+        </div>
+    </main>
 
     <footer class="container-fluid py-3 text-center bg-light footer">
         <div class="row ">
@@ -78,7 +87,7 @@
                 </ul>
             </div>
 
-            <div class="col-lg-4 col-md-6 mb-4 mb-md-0 my-4">
+            <div class="col-lg-4 col-md-6 mb-4 mb-md-0 my-3">
                 <h5 class="text-uppercase mb-0">Contactez-nous</h5>
                 <ul class="list-unstyled">
                     <li>

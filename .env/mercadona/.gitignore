@@ -1,6 +1,14 @@
 mercadona/.env
 requirements.txt
-../Sources/
 ../../Dockerfile
 ../../.dockerignore
+../../.gitignore
 ../django_env/
+db.json
+sql_scripts.sql
+Dockerfile
+.dockerignore
+fly.toml
+upload.py
+db.sqlite3
+mercadona_promos/static/images/

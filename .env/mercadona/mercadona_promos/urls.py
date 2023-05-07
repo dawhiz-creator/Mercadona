@@ -8,8 +8,6 @@ from django.urls import path
 
 urlpatterns = [
     path('', views.catalogue, name='catalogue'),
-        # path('produit/<int:produit_id>/', views.detail_produit, name='detail-produit'),
-
 ]
 
 # images

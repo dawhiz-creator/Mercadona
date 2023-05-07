@@ -19,8 +19,17 @@ from django.conf import settings
 from django.urls import include, path
 from django.contrib import admin
 
+
+import environ
+from dotenv import load_dotenv
+from pathlib import Path
+import environ
+from django.core.management.utils import get_random_secret_key
+import os
+
 urlpatterns = [
     path('', include('mercadona_promos.urls')),
     path('admin/', admin.site.urls),
+    # path(env('SECRET_ADMIN_URL') + '/admin/', admin.site.urls),
 ]
 
