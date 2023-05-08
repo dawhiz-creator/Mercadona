@@ -8,11 +8,10 @@ L'objectif de cette documentation technique est de présenter les éléments cl�
 
 L'application est structurée selon le modèle MVC (Modèle-Vue-Contrôleur), ce qui permet de séparer la logique de présentation de la logique de traitement des données. La structure globale de l'application est la suivante :
 
-
-
-.
-|-- manage.py
-|-- mercadona
+```
+. 
+|-- manage.py 
+|-- mercadona  
 |   |-- __init__.py
 |   |-- __pycache__
 |   |   |-- __init__.cpython-39.pyc
@@ -39,10 +38,13 @@ L'application est structurée selon le modèle MVC (Modèle-Vue-Contrôleur), ce
 |   |   |-- __init__.py
 |   |   `-- __pycache__
 |   |       |-- 0001_initial.cpython-39.pyc
+|   |       `-- __init__.cpython-39.pyc
 |   |-- models.py
 |   |-- static
 |   |   |-- CSS
 |   |   |   `-- style.css
+|   |   |-- JS
+|   |   |   `-- script.js
 |   |   |-- android-chrome-192x192.png
 |   |   |-- android-chrome-512x512.png
 |   |   |-- apple-touch-icon.png
@@ -51,14 +53,14 @@ L'application est structurée selon le modèle MVC (Modèle-Vue-Contrôleur), ce
 |   |   |-- favicon.ico
 |   |   |-- images
 |   |   |   `-- produits
-|   |   |       |-- A_13.jpg
+|   |   |       |-- A13_150xp.jpg
 |   |   `-- site.webmanifest
 |   |-- templates
 |   |   |-- base.html
 |   |   |-- catalogue.html
 |   |   |-- conditions.html
 |   |   |-- confidentialites.html
-|   |   `-- mentions-legales.html
+|   |   `-- mentions.html
 |   |-- templatetags
 |   |   `-- custom_filters.py
 |   |-- tests
@@ -72,6 +74,7 @@ L'application est structurée selon le modèle MVC (Modèle-Vue-Contrôleur), ce
 |   |-- urls.py
 |   `-- views.py
 |-- requirements.txt
+```
 
 Le dossier `application` contient les fichiers de configuration de l'application. Le dossier `catalogue` contient les modèles et les vues pour la gestion des produits. Le dossier `promotions` contient les modèles et les vues pour la gestion des promotions. Le dossier `users` contient les modèles, les vues et les formulaires pour la gestion des utilisateurs et de l'authentification. Les dossiers `static` et `media` contiennent respectivement les fichiers statiques (CSS, JS) et les fichiers médias (images).
 
