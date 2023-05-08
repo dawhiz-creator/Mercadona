@@ -5,6 +5,7 @@ body {
     overflow-x: hidden;
     flex-direction: column;
     min-height: 100vh;
+    margin-top: 35px;
 }
 
 /* Styles de la barre de navigation */
@@ -54,7 +55,7 @@ footer, header {
 /* color anime */
 
   .animated-bg {
-    background-image: linear-gradient(to right, #FDEDEC, #F9EBEA, #F5EEF8, #EAF2F8, #E8F8F5, #F2F5EA, #FDFEFE);
+    background-image: linear-gradient(to right, #FDEDEC, #F9EBEA, #F5EEF8, #EAF2F8, #E8F8F5, #d84a16, #FDFEFE);
     background-size: 200% auto;
     animation: animate-bg 10s linear infinite, pulse 1s ease-in-out infinite;
   }

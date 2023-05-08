@@ -8,6 +8,9 @@ from django.urls import path
 
 urlpatterns = [
     path('', views.catalogue, name='catalogue'),
+    path('mentions/', views.mentions, name='mentions'),
+    path('confidentialites/', views.confidentialites, name='confidentialites'),
+    path('conditions/', views.conditions, name='conditions'),
 ]
 
 # images

@@ -171,6 +171,7 @@ USE_TZ = True
 
 # fichier CSS/images/JS
 STATIC_URL = 'static/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),] # new
 
 # images
 MEDIA_URL = '/media/'

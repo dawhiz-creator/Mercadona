@@ -8,7 +8,7 @@ from django.test import TestCase
 from mercadona_promos.models import Categorie, Promotion, Produit, Admin
 
 
-                               
+                                #    Test OK
 class ModelTests(TestCase):
     def test_create_categorie(self):
         c = Categorie.objects.create(libelle="Fruits")
@@ -30,7 +30,7 @@ class ModelTests(TestCase):
         self.assertEqual(a.nom, "admin")
 
 
-                       
+                         #    Test OK
 
 '''
 Test des méthodes date_debut_promo et date_fin_promo du modèle Promotion 
@@ -53,7 +53,7 @@ class ModelTests(TestCase):
 
 
 
-                               
+                                 #    Test échoué
 
 '''
 Test de la méthode prix_apres_promo du modèle Produit 
@@ -74,7 +74,7 @@ pour s'assurer que les calculs de prix sont corrects
 # #         self.assertEqual(p.prix_apres_promo(), "2.25")
 
 
-
+#----------------------TEST en cours FIN-----------#
 
 
 
@@ -119,7 +119,7 @@ correspond bien à la valeur définie lors de la création de l'objet.
 '''
 
 
-      
+        #    Test OK
 from django.test import TestCase
 from mercadona_promos.models import Produit, Promotion, Categorie
 

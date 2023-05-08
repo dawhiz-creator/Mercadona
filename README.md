@@ -1,4 +1,4 @@
-# Mercadona Promotions App
+# Mercadona Retail App
 
 ## Description
 
@@ -60,7 +60,7 @@ Cette application est distribuée sous la licence MIT.
 
 ## Contact
 
-Pour toute question ou assistance, veuillez envoyer un e-mail à [support@mercadona-promotions.com](mailto:dawhiz@live.fr).
+Pour toute question ou assistance, veuillez envoyer un e-mail à [support@mercadona-retail.com](mailto:dawhiz@live.fr).
 
 ## Liens utiles
 

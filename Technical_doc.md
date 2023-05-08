@@ -8,57 +8,81 @@ L'objectif de cette documentation technique est de présenter les éléments cl�
 
 L'application est structurée selon le modèle MVC (Modèle-Vue-Contrôleur), ce qui permet de séparer la logique de présentation de la logique de traitement des données. La structure globale de l'application est la suivante :
 
-application/
-    __init__.py
-    settings.py
-    urls.py
-    wsgi.py
-catalogue/
-    __init__.py
-    admin.py
-    apps.py
-    models.py
-    views.py
-    templates/
-        catalogue/
-            index.html
-            detail.html
-    tests/
-        __init__.py
-        test_views.py
-        test_models.py
-promotions/
-    __init__.py
-    admin.py
-    apps.py
-    models.py
-    views.py
-    templates/
-        promotions/
-            add.html
-            edit.html
-    tests/
-        __init__.py
-        test_views.py
-        test_models.py
-users/
-    __init__.py
-    admin.py
-    apps.py
-    forms.py
-    models.py
-    views.py
-    templates/
-        users/
-            login.html
-    tests/
-        __init__.py
-        test_views.py
-        test_models.py
-static/
-    css/
-    js/
-media/
+
+
+```
+.
+|-- Dockerfile
+|-- db.json
+|-- db.sqlite3
+|-- fly.toml
+|-- manage.py
+|-- mercadona
+|   |-- __init__.py
+|   |-- __pycache__
+|   |   |-- __init__.cpython-39.pyc
+|   |   |-- settings.cpython-39.pyc
+|   |   |-- urls.cpython-39.pyc
+|   |   `-- wsgi.cpython-39.pyc
+|   |-- asgi.py
+|   |-- settings.py
+|   |-- urls.py
+|   `-- wsgi.py
+|-- mercadona_promos
+|   |-- __init__.py
+|   |-- __pycache__
+|   |   |-- __init__.cpython-39.pyc
+|   |   |-- admin.cpython-39.pyc
+|   |   |-- apps.cpython-39.pyc
+|   |   |-- models.cpython-39.pyc
+|   |   |-- urls.cpython-39.pyc
+|   |   `-- views.cpython-39.pyc
+|   |-- admin.py
+|   |-- apps.py
+|   |-- migrations
+|   |   |-- 0001_initial.py
+|   |   |-- __init__.py
+|   |   `-- __pycache__
+|   |       |-- 0001_initial.cpython-39.pyc
+|   |       |-- 0002_admin_rename_debut_promotion_date_debut_and_more.cpython-39.pyc
+|   |       |-- 0003_alter_produit_image_url.cpython-39.pyc
+|   |       `-- __init__.cpython-39.pyc
+|   |-- models.py
+|   |-- static
+|   |   |-- CSS
+|   |   |   `-- style.css
+|   |   |-- android-chrome-192x192.png
+|   |   |-- android-chrome-512x512.png
+|   |   |-- apple-touch-icon.png
+|   |   |-- favicon-16x16.png
+|   |   |-- favicon-32x32.png
+|   |   |-- favicon.ico
+|   |   |-- images
+|   |   |   `-- produits
+|   |   |       |-- A_13.jpg|   |   |   
+|   |   `-- site.webmanifest
+|   |-- templates
+|   |   |-- base.html
+|   |   |-- catalogue.html
+|   |   |-- conditions.html
+|   |   |-- confidentialites.html
+|   |   `-- mentions-legales.html
+|   |-- templatetags
+|   |   `-- custom_filters.py
+|   |-- tests
+|   |   |-- __init__.py
+|   |   |-- __pycache__
+|   |   |   |-- __init__.cpython-39.pyc
+|   |   |   |-- test_models.cpython-39.pyc
+|   |   |   `-- test_views.cpython-39.pyc
+|   |   |-- test_models.py
+|   |   `-- test_views.py
+|   |-- urls.py
+|   `-- views.py
+|-- requirements.txt
+|-- sql_scripts.sql
+`-- upload.py
+```
 
 Le dossier `application` contient les fichiers de configuration de l'application. Le dossier `catalogue` contient les modèles et les vues pour la gestion des produits. Le dossier `promotions` contient les modèles et les vues pour la gestion des promotions. Le dossier `users` contient les modèles, les vues et les formulaires pour la gestion des utilisateurs et de l'authentification. Les dossiers `static` et `media` contiennent respectivement les fichiers statiques (CSS, JS) et les fichiers médias (images).
 

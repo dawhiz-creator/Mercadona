@@ -14,3 +14,12 @@ def catalogue(request):
         produits = Produit.objects.filter(categorie__libelle=categorie)
 
     return render(request, 'catalogue.html', {'categories': categories, 'produits': produits, 'promotions': promotions})
+
+def mentions(request):
+    return render(request, 'mentions.html')
+
+def confidentialites(request):
+    return render(request, 'confidentialites.html')
+
+def conditions(request):
+    return render(request, 'conditions.html')
