@@ -76,7 +76,7 @@ L'application est structurée selon le modèle MVC (Modèle-Vue-Contrôleur), ce
 |-- requirements.txt
 ```
 
-Le dossier `application` contient les fichiers de configuration de l'application. Le dossier `catalogue` contient les modèles et les vues pour la gestion des produits. Le dossier `promotions` contient les modèles et les vues pour la gestion des promotions. Le dossier `users` contient les modèles, les vues et les formulaires pour la gestion des utilisateurs et de l'authentification. Les dossiers `static` et `media` contiennent respectivement les fichiers statiques (CSS, JS) et les fichiers médias (images).
+Le dossier `mercadona_promos` contient les fichiers de configuration de l'application avec les modèles et les vues pour la gestion des produits. Les dossiers `static` et `static/images` contiennent respectivement les fichiers statiques (CSS, JS) et les fichiers médias (images).
 
 ## Sécurité
 
