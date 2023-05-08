@@ -10,12 +10,7 @@ L'application est structurée selon le modèle MVC (Modèle-Vue-Contrôleur), ce
 
 
 
-```
 .
-|-- Dockerfile
-|-- db.json
-|-- db.sqlite3
-|-- fly.toml
 |-- manage.py
 |-- mercadona
 |   |-- __init__.py
@@ -44,9 +39,6 @@ L'application est structurée selon le modèle MVC (Modèle-Vue-Contrôleur), ce
 |   |   |-- __init__.py
 |   |   `-- __pycache__
 |   |       |-- 0001_initial.cpython-39.pyc
-|   |       |-- 0002_admin_rename_debut_promotion_date_debut_and_more.cpython-39.pyc
-|   |       |-- 0003_alter_produit_image_url.cpython-39.pyc
-|   |       `-- __init__.cpython-39.pyc
 |   |-- models.py
 |   |-- static
 |   |   |-- CSS
@@ -59,7 +51,7 @@ L'application est structurée selon le modèle MVC (Modèle-Vue-Contrôleur), ce
 |   |   |-- favicon.ico
 |   |   |-- images
 |   |   |   `-- produits
-|   |   |       |-- A_13.jpg|   |   |   
+|   |   |       |-- A_13.jpg
 |   |   `-- site.webmanifest
 |   |-- templates
 |   |   |-- base.html
@@ -80,9 +72,6 @@ L'application est structurée selon le modèle MVC (Modèle-Vue-Contrôleur), ce
 |   |-- urls.py
 |   `-- views.py
 |-- requirements.txt
-|-- sql_scripts.sql
-`-- upload.py
-```
 
 Le dossier `application` contient les fichiers de configuration de l'application. Le dossier `catalogue` contient les modèles et les vues pour la gestion des produits. Le dossier `promotions` contient les modèles et les vues pour la gestion des promotions. Le dossier `users` contient les modèles, les vues et les formulaires pour la gestion des utilisateurs et de l'authentification. Les dossiers `static` et `media` contiennent respectivement les fichiers statiques (CSS, JS) et les fichiers médias (images).
 
