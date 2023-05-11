@@ -2,7 +2,7 @@
 
 ## Description
 
-Cette application web permet à l'utilisateur de consulter les promotions de Mercadona, une entreprise de retail disposant de 1675 magasins en Espagne.
+Cette application web permet à l'utilisateur de consulter les promotions de Mercadona, une entreprise de retail disposant de plusieurs magasins en Espagne.
 
 ## Fonctionnalités
 
@@ -15,11 +15,11 @@ Cette application web permet à l'utilisateur de consulter les promotions de Mer
 
 ## Installation
 
-1. Cloner le repository : `git clone https://github.com/votre-repository`
+1. Cloner le repository : `git clone git@github.com:dawhiz-creator/Mercadona.git`
 2. Installer les dépendances : `pip install -r requirements.txt`
-3. Configurer les variables d'environnement : `cp .env.example .env`
-4. Exécuter les migrations de la base de données : `python manage.py migrate`
-5. Exécuter le serveur de développement : `python manage.py runserver`
+3. Configurer les variables d'environnement en local (aucun secret n'est exposé dans le projet pour des raisons de sécurité), dans le dossier mercadona
+4. Exécuter les migrations de la base de données : `python manage.py makemigrations && python manage.py migrate`
+5. Exécuter le serveur de développement : `python manage.py runserver *ou* gunicorn mercadon.wsgi (si vous souhaitez utiliser le serveur gunicorn)`
 
 ## Configuration
 

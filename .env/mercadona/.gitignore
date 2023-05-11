@@ -1,5 +1,4 @@
 mercadona/.env
-requirements.txt
 ../../Dockerfile
 ../../.dockerignore
 ../../.gitignore
@@ -11,4 +10,4 @@ Dockerfile
 fly.toml
 upload.py
 db.sqlite3
-mercadona_promos/static/images/
+static/images/

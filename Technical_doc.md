@@ -86,9 +86,7 @@ L'application web de promotions pour Mercadona doit respecter les principes de s
 2. Protection contre les attaques CSRF : les formulaires de l'application incluent des jetons CSRF pour empêcher les attaques CSRF (Cross-Site Request Forgery).
 3. Protection contre les attaques XSS : les données entrées par les utilisateurs sont échappées pour empêcher les attaques XSS (Cross-Site Scripting).
 4. Protection de la base de données : les mots de passe des utilisateurs sont stockés de manière sécurisée en utilisant un algorithme de hachage et de salage.
-5. Mises à jour régulières : les mises à jour de sécurité pour le système d'exploitation, la base de données et les bibliothèques Python
-
-sont effectuées régulièrement pour garantir la sécurité de l'application.
+5. Mises à jour régulières : les mises à jour de sécurité pour le système d'exploitation, la base de données et les bibliothèques Python sont effectuées régulièrement pour garantir la sécurité de l'application.
 
 Évolutions futures
 Plusieurs évolutions sont envisageables pour améliorer l'application web de promotions pour Mercadona :
@@ -99,5 +97,5 @@ Plusieurs évolutions sont envisageables pour améliorer l'application web de pr
 * Améliorer l'interface utilisateur pour rendre l'application plus conviviale et intuitive.
 * Ajouter une fonctionnalité de recommandation de produits basée sur les achats précédents de l'utilisateur.
 
-Conclusion
+Conclusion :
 L'application web de promotions Mercadona est une application robuste et sécurisée développée en utilisant les technologies les plus récentes. Elle offre une expérience utilisateur agréable et permet une gestion efficace des promotions pour les administrateurs. Les évolutions futures envisagées permettront d'améliorer encore davantage l'application et d'offrir des fonctionnalités supplémentaires aux utilisateurs.
