@@ -8,7 +8,6 @@
         <p class="lead">Découvrez les offres spéciales pour économiser de l'argent sur vos achats.</p>
     </div>
 
-
     <div class="col-md-12 justify-content-center">
         <div class=" text-center alert alert-danger">
             <h2>Les Bons Plans</h2>
@@ -116,13 +115,14 @@
                         <div class="carousel-inner">
                             {% for promotion in promotions %}
                             <div class="carousel-item {% if forloop.first %}active{% endif %}">
-                                <img src="{{ promotion.produit.image_url }}" class="d-block w-100"
-                                    alt="{{ promotion.libelle }}">
+                                <img src="{{ promotion.produit.image_url }}" class="card-img-top img-fluid" alt="{{ produit.libelle }}"
+                                style="height: 350px; object-fit: contain;">
                                 <div class="carousel-caption d-none d-md-block">
                                     <h5>{{ promotion.libelle }}</h5>
                                     <p>{{ promotion.description }}</p>
                                     <a href="{% url 'catalogue' %}?promotion={{ promotion.id }}"
-                                        class="btn btn-primary">Voir les produits</a>
+                                        class="btn btn-primary">Voir les produits
+                                    </a>
                                 </div>
                             </div>
                             {% endfor %}
@@ -140,6 +140,7 @@
             </div>
             {% endif %}
         </div>
+
         <div class="col-md-8 text-center ">
             <h2 class="text-muted">Catalogue</h2>
             {% if produits %}
@@ -147,11 +148,10 @@
                 {% for produit in produits %}
                 <div class="col-md-4 mb-4">
                     <div class="card h-100">
-                        <img src="{{ produit.image_url }}" class="card-img-top" alt="{{ produit.libelle }}">
-
+                        <img src="{{ produit.image_url }}" class="card-img-top img-fluid" alt="{{ produit.libelle }}"
+                            style="height: 300px; object-fit: contain;">
                         <div class="card-body">
                             <h5 class="card-title">{{ produit.libelle }}</h5>
-
                             <p class="card-text">
                                 {% if produit.categorie.libelle == 'Vetements' %}
                                 <i class="fas fa-tshirt"></i>
@@ -168,10 +168,9 @@
                                 {% elif produit.categorie.libelle == 'Divers' %}
                                 <i class="fas fa-puzzle-piece"></i>
                                 {% else %}
-                                {{ promotion.produit.categorie.libelle }}
+                                {{ produit.categorie.libelle }}
                                 {% endif %}
                             </p>
-
                             <p class="card-text">{{ produit.description }}</p>
                             <p class="card-text">
                                 <strong>Prix : </strong>
@@ -193,6 +192,7 @@
                 </div>
                 {% endfor %}
             </div>
+
             {% else %}
             <div class="alert alert-info" role="alert">
                 Aucun produit disponible pour cette catégorie.

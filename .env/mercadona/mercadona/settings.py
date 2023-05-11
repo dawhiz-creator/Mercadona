@@ -24,10 +24,10 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
+import os
 from pathlib import Path
 import environ
 from django.core.management.utils import get_random_secret_key
-import os
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
@@ -41,7 +41,6 @@ env = environ.Env(
     DEBUG=(bool, False),
 )
 
-# ALLOWED_HOSTS = ['*']
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'mercadona-retail.fly.dev','mercadona-promos.fly.dev']
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -54,14 +53,15 @@ environ.Env.read_env(BASE_DIR / 'mercadona/.env')
 SECRET_KEY = env.str('SECRET_KEY', default=get_random_secret_key())
 if SECRET_KEY is None:
     raise ValueError('PROD_KEY not found in environment variables')
+
 DEBUG= env.bool('DEBUG', default=False)
 
-DATABASES = {
-    # read os.environ['DATABASE_URL']
-    'default': env.db()
-}
+# DATABASES = {
+#     # read os.environ['DATABASE_URL']
+#     'default': env.db()
+# }
 
-STATIC_ROOT = BASE_DIR / 'mercadona_promos/static'
+STATIC_ROOT = BASE_DIR / 'static'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 CSRF_TRUSTED_ORIGINS = ['https://mercadona-retail.fly.dev']
@@ -126,16 +126,16 @@ WSGI_APPLICATION = 'mercadona.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 # ---- Setted in .env for localhost
-# DATABASES = {
-#     'default': {
-#         'ENGINE': env('ENGINE'),
-#         'NAME': env('DB_NAME'),
-#         'USER': env('DB_USER'),
-#         'PASSWORD': env('DB_KEY'),
-#         'HOST': env('DB_HOST'),
-#         'PORT': env('DB_PORT'),
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': env('ENGINE'),
+        'NAME': env('DB_NAME'),
+        'USER': env('DB_USER'),
+        'PASSWORD': env('DB_KEY'),
+        'HOST': env('DB_HOST'),
+        'PORT': env('DB_PORT'),
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -158,7 +158,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'fr-fr'
 
 TIME_ZONE = 'UTC'
 
@@ -171,14 +171,12 @@ USE_TZ = True
 
 # fichier CSS/images/JS
 STATIC_URL = 'static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),] # new
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static/images/'), ]
 
 # images
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'mercadona_promos/static/images/')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images/')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
-
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-

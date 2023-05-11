@@ -28,6 +28,15 @@ body {
     font-size: 1.2rem;
     color: #000;
   } */
+
+  .card {
+    position: relative;
+  }
+
+  .card-img-top {
+      height: 200px;
+      object-fit: contain;
+  }
   
   .nav-link:hover {
     color: #007bff;
