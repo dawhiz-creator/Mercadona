@@ -11,3 +11,6 @@ fly.toml
 upload.py
 db.sqlite3
 static/images/
+../../fly-promos-db-dump
+fly-promos-db-dump
+mercadona_promos/static/images/*
